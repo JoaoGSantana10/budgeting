@@ -10,6 +10,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Entidade JPA correspondente à tabela que armazena transações.
+ *
+ * <p>{@code @Entity} informa ao JPA que esta classe representa dados persistentes.
+ * {@code @Id} identifica a chave primária. {@code @Enumerated(EnumType.STRING)}
+ * grava a categoria como texto, em vez de número interno. {@code @Data} e os
+ * construtores são fornecidos pelo Lombok para reduzir código repetitivo.</p>
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -32,6 +40,11 @@ public class TransactionEntity {
        );
     }
 
+    /**
+     * Converte esta entidade JPA em uma entidade de domínio.
+     *
+     * @return transação no modelo usado pelas regras de negócio
+     */
     public Transaction toDomain() {
         return new Transaction(
                 new TransactionId(this.id),
@@ -41,3 +54,9 @@ public class TransactionEntity {
         );
     }
 }
+    /**
+     * Converte uma entidade de domínio em uma entidade JPA.
+     *
+     * @param transaction objeto de domínio
+     * @return representação persistível
+     */
