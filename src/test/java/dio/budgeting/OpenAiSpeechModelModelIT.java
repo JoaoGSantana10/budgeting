@@ -11,6 +11,12 @@ import java.nio.file.Files;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Teste de integração da conversão de texto em áudio MP3.
+ *
+ * <p>O teste só é habilitado quando {@code OPENAI_API_KEY} existe e verifica se
+ * o áudio gerado possui tamanho suficiente antes de salvá-lo em um arquivo temporário.</p>
+ */
 @SpringBootTest
 @EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 public class OpenAiSpeechModelModelIT {

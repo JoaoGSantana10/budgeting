@@ -10,6 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Demonstração de tool calling com duas operações matemáticas.
+ *
+ * <p>A classe interna {@code MathTools} expõe métodos anotados com {@code @Tool}.
+ * O ChatClient permite que o modelo decida quando invocar cada método.</p>
+ */
 @SpringBootTest
 @EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 public class ToolCallingIT {

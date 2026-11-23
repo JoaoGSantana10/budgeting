@@ -11,6 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Teste de integração para chamadas diretas ao modelo OpenAI Chat.
+ *
+ * <p>Configura opções como modelo, temperatura e formato textual antes da chamada.</p>
+ */
 @SpringBootTest
 @EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 public class OpenAiChatModelIT {

@@ -11,6 +11,12 @@ import org.springframework.core.io.ClassPathResource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Testes parametrizados do modelo de transcrição.
+ *
+ * <p>{@code @ParameterizedTest} executa o mesmo método para vários arquivos,
+ * enquanto {@code @CsvSource} fornece os pares arquivo/palavra esperada.</p>
+ */
 @SpringBootTest
 @EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 public class OpenAiTranscriptionModelIT {

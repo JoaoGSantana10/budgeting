@@ -9,6 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Teste de integração do ChatClient com o provedor OpenAI.
+ *
+ * <p>{@code @EnabledIfEnvironmentVariable} evita executar o teste sem chave de API.
+ * {@code @SpringBootTest} fornece o contexto necessário para obter o modelo.</p>
+ */
 @SpringBootTest
 @EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 public class OpenAiChatClientIT {
